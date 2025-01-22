@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>forum.ge</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+   
+</head>
+<body>
+    <header>
+        <div class="d-flex justify-content-between align-items-center">
+            <div class="logo">
+                <img src="./image/logo.gif">
+            </div>
+            <div class="ad-under-logo d-none d-sm-block">
+                <img src="./image/ad.png">
+            </div>
+
+        </div>
+    </header>
+    <div class="forum">
+        <div class="forum-content">
+            <div class="forum-navigation">
+                <div class="navigation-left">
+                    <span>Welcome Guest (<a href="">ავტორიზაცია
+                        </a>| <a type="button" data-bs-toggle="modal" data-bs-target="#registrationModal" href="">რეგისტრაცია</a>)</span>
+                    <div class="tbilisi-forum-main-button">
+                        <img src="./image/nav.gif">
+                        <a href="">თბილისის ფორუმი</a>
+                    </div>
+
+                </div>
+                <div class="modal fade" id="registrationModal" tabindex="-1" aria-labelledby="registrationModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="registrationModalLabel">Register</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <form id="registrationForm">
+                            <div class="mb-3">
+                              <label for="name" class="form-label">სახელი</label>
+                              <input type="text" class="form-control" id="name" required>
+                            </div>
+                            <div class="mb-3">
+                              <label for="lastname" class="form-label">გვარი</label>
+                              <input type="text" class="form-control" id="lastname" required>
+                            </div>
+                            <div class="mb-3">
+                              <label for="email" class="form-label">ელ-ფოსტა</label>
+                              <input type="email" class="form-control" id="email" required>
+                            </div>
+                            <div class="mb-3">
+                              <label for="phone" class="form-label">მობილური ტელეფონი</label>
+                              <input type="tel" class="form-control" id="phone" required>
+                            </div>
+                            <div class="mb-3">
+                              <label for="city" class="form-label">ქალაქი</label>
+                              <input type="text" class="form-control" id="city" required>
+                            </div>
+                            <div class="mb-3">
+                              <label for="country" class="form-label">ქვეყანა</label>
+                              <input type="text" class="form-control" id="country" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">პაროლი<span style="font-size: 10px;">(უნდა შეიცავდეს  1 დიდ + 4 ასოს + რიცხვებს)</span></label>
+                                <input type="password" class="form-control" id="password" required>
+                              </div>
+                            <div class="mb-3 form-check">
+                              <input type="checkbox" class="form-check-input" id="policy" required>
+                              <label class="form-check-label" for="policy">ვეთანხმები საიტის მიერ მოცებულ მოხმარების პირობებს</label>
+                            </div>
+                            <button id="submit" type="submit" class="btn btn-primary">რეგისტრაციის დასრულება</button>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                <div class="navigation-right">
+                    <div class="validation">
+                        <a href="">ვალიდაციის წერილის ხელახალი გაგზავნა</a>
+                    </div>
+  
+                    <div class="navigation-right__links">
+                        <a href="">წესები</a>
+                        · 
+                        <a href="">დახმარება</a>
+                        · 
+                        <a href="" style="font-weight: 700;">ძებნა</a>
+                        · 
+                        <a href="">წევრები</a>
+                        · 
+                        <a href="">კალენდარი</a>
+                        · 
+                        <a href="">რჩეულები</a>
+                        · 
+                        <a href="">ჩატი</a>
+                    </div>
+                    <div class="quick-login">
+                        <label>Quick Log In</label>
+                        <input id="username" type="text" placeholder="User Name">
+                        <input id="password" type="password" placeholder="********">
+                        <button class="login confirmation" onclick="checkPassword()">Go</button>
+                    </div>
+                </div>
+            </div>
+            <div class="forum-main-page">
+                <div class="general-forum">
+                    <div class="header">
+                        > <a href="">საერთო ფორუმი</a>
+                    </div>
+                    <div class="forum-naming">
+                        <div class="forum-cube"></div>
+                        <div class="big-size-naming">ფორუმი</div>
+                        <div class="small-size-naming">თემები</div>
+                        <div class="small-size-naming">წერილები</div>
+                        <div class="medium-size-naming">ბოლო-წერილი</div>
+                    </div>
+                    <div class="forum-discussions">
+                        <div class="forum-discussion general-disscusison d-flex">
+                            <div class="lamp">
+                                <img src="./image/f_off.gif">
+                            </div>
+                            <div class="theme-name">
+                            <a href="">General Discussion</a>
+                            ზოგადი დისკუსიები
+
+                            </div>
+                            <div class="themes-number d-none d-sm-block d-none d-sm-block">
+                                20316
+                            </div>
+                            <div class="messages-number d-none d-sm-block">
+                                1975585
+                            </div>
+                            <div class="last-message d-none d-sm-block">
+                                <a href=""> >> როგორ გავარჩიოთ ადამიანი...</a>
+                                <div class="date-time">
+                                    14 jan 2025, 23:58
+                                </div>
+                                <div class="addedby">
+                                    by: <a href="">giorgevich23</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="forum-discussion no-name d-flex">
+                            <div class="lamp">
+                                <img src="./image/f_off.gif">
+                            </div>
+                            <div class="theme-name">
+                                <a href="">უსათაურო</a>
+                                aka Flame
+                            </div>
+
+                            <div class="themes-number d-none d-sm-block d-none d-sm-block">
+                                186200
+                            </div>
+                            <div class="messages-number d-none d-sm-block">
+                                5158838
+                            </div>
+                            <div class="last-message d-none d-sm-block">
+                                <a href=""> >> რას უსმენთ?</a>
+                                <div class="date-time">
+                                    15 Jan 2025, 03:01
+                                </div>
+                                <div class="addedby">
+                                    by: <a href="">2929291771</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="forum-discussion about-forum d-flex">
+                            <div class="lamp">
+                                <img src="./image/f_off.gif">
+                            </div>
+                            <div class="theme-name">
+                            <a href="">ფორუმის შესახებ</a>
+                            თქვენი შეკითხვები და წინადადებები ფორუმთან დაკავშირებით
+                            </div>
+                            <div class="themes-number d-none d-sm-block d-none d-sm-block">
+                                9552
+                            </div>
+                            <div class="messages-number d-none d-sm-block">
+                                326076
+                            </div>
+                            <div class="last-message d-none d-sm-block">
+                                <a href=""> >> ნიკის რეგისტრაცია</a>
+                                <div class="date-time">
+                                    14 jan 2025, 03:19
+                                </div>
+                                <div class="addedby">
+                                    by: <a href="">Win777</a>
+                                </div>
+                            </div>
+                        </div>
+
+
+    
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="right-ad d-none d-sm-block">
+            <img src="./image/180x600.jpg">
+        </div>
+    
+    
+    </div>
+
+    <div class="slider-container">
+        <div class="slider">
+          <div class="slide">
+            <img src="./image/best-free-wordpress-slider-plugins-1-1.png" alt="Slide 1">
+          </div>
+          <div class="slide">
+            <img src="./image/sliderimages.png" alt="Slide 2">
+          </div>
+          <div class="slide">
+            <img src="./image/best-free-wordpress-slider-plugins-1-1.png" alt="Slide 3">
+          </div>
+        </div>
+        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="next" onclick="moveSlide(1)">&#10095;</button>
+      </div>
+      
+
+      
+    <div id="carouselExample" class="carousel slide d-none">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="./image/banner-1544x500.png" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="./image/best-free-wordpress-slider-plugins-1-1.png" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="./image/sliderimages.png" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+    <div class="footer">
+        <div class="footer__quick-login">
+            <label>Quick Log In</label>
+            <input id="username" type="text" placeholder="User Name">
+            <input id="password" type="password" placeholder="********">
+            <button class="login confirmation" onclick="checkPassword()">Go</button>
+        </div>
+        <div class="footer__posts-links">
+            <a href="">მოდერატორების გუნდი</a> | 
+            <a href="">დღევანდელი აქტიური თემები</a> |
+            <a href="">Today's top 10 posters</a> |
+            <a href="">50 ყველაზე აქტიური ფორუმელი</a> |
+        </div>
+        <div class="footer__forum-statistics">
+            <div class="statistics__header">
+                ფორუმის სტატისტიკა
+            </div>
+            <div class="footer__forum-statistics__user-numbers">
+                1791 მომხმარებელი აქტიურია ბოლო 15 წუთის განმავლობაში
+            </div>
+            <div class="forum-statistics__users">
+                <a href="">zgarbi^_^</a>
+                <a href=""> Miss_Wanderer,</a>
+                <a href=""> Old City,</a>
+                <a href=""> GoogleBot,</a>
+                <a href=""> Borati,</a>
+                <a href=""> ecklesiast,</a>
+                <a href=""> randbetween011,</a>
+                <a href=""> Gumbera2023,</a>
+                <a href=""> meskalito,</a>
+                <a href=""> Old City,</a>
+                <a href=""> DEME.</a>
+                <a href=""> konformist,</a>
+                <a href=""> LORD VOLDEMOR,</a>
+                <a href=""> tomhardy,</a>
+                <a href=""> mind_auger,</a>
+                <a href=""> settoys,</a>
+                <a href=""> iviko1992,</a>
+                <a href=""> sabasaba24,</a>
+                <a href=""> mind_auger,</a>
+                <a href=""> sabasaba24,</a>
+                <a href=""> meskalito,</a>
+                <a href=""> sabasaba24,</a>
+                <a href=""> Gumbera2023,</a>
+                <a href=""> konformist,</a>
+                <a href=""> Old City,</a>
+                <a href=""> Miss_Wanderer,</a>
+                <a href=""> settoys,</a>
+                <a href=""> sabasaba24,</a>
+                <a href=""> DEME.</a>
+                <a href=""> GoogleBot,</a>
+                <a href=""> randbetween011,</a>
+                <a href=""> zgarbi^_^,</a>
+                <a href=""> Borati,</a>
+                <a href=""> tomhardy,</a>
+                <a href=""> iviko1992,</a>
+                <a href=""> ecklesiast,</a>
+                <a href=""> sabasaba24,</a>
+                <a href=""> sabasaba24,</a>
+                <a href=""> LORD VOLDEMOR,</a>
+                <div class="full-list">
+                    სრულად ნახვა: <a href="">ბოლო ქმედების მიხედვით,</a> <a href="">მომხმარებლის სახელის მიხედვით</a>
+                </div>
+            </div>
+            <div class="forum-statistics__users-birthday">
+                <div class="forum-statistics__users-birthday__header">
+                    Today's Birthdays
+                </div>
+                <div class="forum-statistics__users-birthday__list">
+                    39 members are celebrating their birthday today
+                    <a href="">PixelPioneer</a>(43),  
+                    <a href="">ShadowQuill</a>(29),
+                    <a href="">LunarEcho</a>(35),  
+                    <a href="">RustyCompass</a>(24),  
+                    <a href="">AuroraRider</a>(31),  
+                    <a href="">BlazingPhoenix</a>(37),  
+                    <a href="">EchoNomad</a>(28),  
+                    <a href="">FrostWolf</a>(40),  
+                    <a href="">NovaDusk</a>(22),  
+                    <a href="">SilentTide</a>(34),  
+                    <a href="">CrimsonVoyager</a>(26),  
+                    <a href="">QuantumJumper</a>(41),  
+                    <a href="">VelvetSparrow</a>(30),  
+                    <a href="">CyberHaven</a>(27),  
+                    <a href="">StarlightMaven</a>(36),  
+                    <a href="">MysticDiver</a>(25),  
+                    <a href="">PhantomTrail</a>(38),  
+                    <a href="">WittyWanderer</a>(32),  
+                    <a href="">IronCladSeeker</a>(23),  
+                    <a href="">GoldenAspen</a>(39),  
+                </div>
+            </div>
+        </div>
+        <div class="delete-cookies">
+            <a href="">Delete cookies set by this board</a> ·<a href="">Mark all posts as read</a> 
+        </div>
+        <div class="footer-end-to-end">
+            ფორუმის სერვერების განთავსებას და ინტერნეტთან კავშირს უზრუნველყოფს: <a href="">CLOUD9</a>
+            <p>Powered by Invision Power Board(U) v1.3 Final © 2003  IPS, Inc.</p>
+        </div>
+    </div>
+
+
+
+    <script src='script.js'></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+</body>
+</html>
