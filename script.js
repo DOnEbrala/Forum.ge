@@ -19,41 +19,41 @@ function checkPassword() {
   }
 }
 document.getElementById('registrationForm').addEventListener('submit', function(event) {
-  event.preventDefault(); // Prevent form submission to validate password first
+  event.preventDefault(); 
   checkPassword();
 });
 
-////////////////////////Slider
+
 
 let currentIndex = 0;
   const slides = document.querySelectorAll('.slide');
   const totalSlides = slides.length;
   const slider = document.querySelector('.slider');
 
-  // Function to move to the next or previous slide
+
   function moveSlide(direction) {
     currentIndex += direction;
 
     if (currentIndex < 0) {
-      currentIndex = totalSlides - 1; // Loop to the last slide
+      currentIndex = totalSlides - 1; 
     } else if (currentIndex >= totalSlides) {
-      currentIndex = 0; // Loop to the first slide
+      currentIndex = 0; 
     }
 
     updateSliderPosition();
   }
 
-  // Function to update the slider position (translation effect)
+  
   function updateSliderPosition() {
     const slideWidth = slides[0].clientWidth;
     slider.style.transform = `translateX(${-currentIndex * slideWidth}px)`;
   }
 
-  // Initialize by showing the first slide
+
   updateSliderPosition();
 
-  // Optional: Auto-slide functionality (every 5 seconds)
-  setInterval(() => moveSlide(1), 5000); // Move to the next slide every 5 seconds
+  
+  setInterval(() => moveSlide(1), 5000); 
 
 
 
@@ -98,7 +98,7 @@ function validateEmail(email) {
     modal.hide();
   });
   
-  // Custom button to trigger the modal
+
   document.getElementById('customRegisterButton').addEventListener('click', function() {
     var modal = new bootstrap.Modal(document.getElementById('registrationModal'));
     modal.show();
